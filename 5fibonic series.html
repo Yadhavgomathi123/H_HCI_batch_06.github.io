@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Fibonacci Series</title>
+
+    <script>
+        function Fibo()
+        {
+            var terms=parseInt(document.getElementById('terms').value);
+            var fibonacciSeries=[];
+
+            if(terms<1)
+            {
+                document.writeln("Please enter a positive integer.");
+                return;
+            }
+            var a=0,b=1;
+            for(var i=0;i<terms;i++)
+            {
+                fibonacciSeries.push(a);
+                var temp=a;
+                a=b;
+                b=temp+b;
+            }
+            var resultText="Fibonacci Series of given numder:"+fibonacciSeries.join(' ');
+            document.writeln(resultText);
+        }
+    </script>
+</head>
+
+    <center>
+        <h1>Fibonacci Series</h1>
+        Enter a number :<input type="text" id="terms"><br><br>
+        <button type="button" onclick="Fibo()" >Fibonacci series</button>
+    </center>
+
+
+</html>
